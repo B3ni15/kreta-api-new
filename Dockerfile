@@ -50,8 +50,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install -g pnpm
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json ./
+RUN pnpm install
 
 RUN pnpm exec playwright install --with-deps chromium
 
