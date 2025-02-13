@@ -9,9 +9,9 @@ Hello! Ez a "API" arra épült hogy egy böngészőt emulálva meg tudjuk szerez
 
 ```json
 {
-    "USERNAME":"e-kreta Felhasználó név",
-    "PASSWORD":"e-kreta Jelszó",
-    "INSTITUTE":"e-kreta Iskola Kód"
+    "USERNAME":"Felhasználó név",
+    "PASSWORD":"Jelszó",
+    "INSTITUTE":"Iskola Kód"
 }
 ```
 
@@ -25,5 +25,17 @@ Hello! Ez a "API" arra épült hogy egy böngészőt emulálva meg tudjuk szerez
 - https://github.com/bczsalba/ekreta-docs-v3
 
 > - Ezeket ajánlom figyelmedbe, ezek alapján a többi funkciót is meg tudod valósítani. (Lehetséges hogy régi a dokumentáció és nem működik minden)
+
+## Contribution
+
+- Ha bármi hibát találsz, vagy valamit hozzá szeretnél adni, nyugodtan forkold a repót és csinálj egy pull requestet.
+
+1. Forkold a repót
+2. Git clone
+3. `npm install`
+4. `node index.js`
+5. Kész! 
+
+> Ha hibát észlelsz, kérlek nyiss egy issue-t.
 
 ### 2025.01.29
