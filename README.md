@@ -1,6 +1,6 @@
 # (ÚJ) Kréta API 
 
-> Docker: `docker run -p 3000:3000 ghcr.io/b3ni15/kreta-api-new:latest`
+> Docker: `docker run -e PORT=4000 -p 4000:4000 ghcr.io/b3ni15/kreta-api-new:latest`
 -# Lehet hogy nem működik...
 
 Hello! Ez a "API" arra épült hogy egy böngészőt emulálva meg tudjuk szerezni az access tokent.
