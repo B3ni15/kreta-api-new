@@ -38,4 +38,4 @@ Hello! Ez a "API" arra épült hogy egy böngészőt emulálva meg tudjuk szerez
 
 > Ha hibát észlelsz, kérlek nyiss egy issue-t.
 
-### 2025.01.29
+*Köszönöm! :)*
