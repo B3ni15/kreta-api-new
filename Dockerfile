@@ -50,7 +50,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 RUN pnpm install --frozen-lockfile
 RUN pnpm exec playwright install --with-deps chromium
 

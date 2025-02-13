@@ -16,7 +16,7 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/api/login', (req, res) => {
-  require('./routes/login')(req, res);
+  require('./routes/login.js')(req, res);
 });
 
 app.listen(port, () => {

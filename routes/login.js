@@ -51,6 +51,11 @@ module.exports = async function (req, res) {
         message: 'CAPTCHA detected. Please complete it manually.',
       });
     }
+    
+    await Promise.all([
+      page.click('a[class="btn btn-kreta"]'),
+      page.waitForNavigation({ waitUntil: 'networkidle', timeout: 15000 }),
+    ]);
 
     console.log('[INFO] Extracting redirected URL...');
     const redirectedURL = page.url();
