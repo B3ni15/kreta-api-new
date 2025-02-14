@@ -4,9 +4,9 @@ module.exports = async function (req, res) {
     try {
         console.log(`[INFO] Received request...`);
 
-        const { refreshToken, instituteCode } = req.body;
+        const { refresh_token, institute_code } = req.body;
 
-        if (!refreshToken || !instituteCode) {
+        if (!refresh_token || !institute_code) {
             console.error(`[ERROR] Missing parameters: ${JSON.stringify({ refreshToken })}`);
             return res.status(400).json({
                 success: false,
@@ -21,8 +21,8 @@ module.exports = async function (req, res) {
             new URLSearchParams({
                 grant_type: 'refresh_token',
                 client_id: 'kreta-ellenorzo-student-mobile-ios',
-                refresh_token: refreshToken,
-                institute_code: instituteCode,
+                refresh_token: refresh_token,
+                institute_code: institute_code,
             }),
             {
                 headers: {
