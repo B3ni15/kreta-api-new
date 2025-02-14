@@ -26,6 +26,10 @@ app.post('/api/login', (req, res) => {
   require('./routes/login.js')(req, res);
 });
 
+app.post('/api/refresh', (req, res) => {
+  require('./routes/refresh.js')(req, res);
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
