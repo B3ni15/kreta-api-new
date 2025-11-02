@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - koffi
+  - recaptcha-solver
+  - vosk-koffi

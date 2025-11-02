@@ -1,5 +1,6 @@
 const axios = require('axios');
 const { chromium } = require('playwright');
+const { solve } = require('recaptcha-solver');
 
 module.exports = async function (req, res) {
   const { USERNAME, PASSWORD, INSTITUTE } = req.body;
@@ -44,12 +45,13 @@ module.exports = async function (req, res) {
     console.log('[INFO] Checking for potential CAPTCHA...');
     const captchaDetected = await page.$('#recaptcha');
     if (captchaDetected) {
-      console.warn('[WARNING] CAPTCHA detected, manual input required.');
-      await browser.close();
-      return res.status(500).json({
-        success: false,
-        message: 'CAPTCHA detected. Please complete it manually.',
-      });
+      console.warn('[WARNING] CAPTCHA detected, attempting to solve...');
+      await solve(page);
+      console.log('[INFO] CAPTCHA solved, clicking submit again...');
+      await Promise.all([
+        page.click('#submit-btn'),
+        page.waitForNavigation({ waitUntil: 'networkidle', timeout: 15000 }),
+      ]);
     }
     
     await Promise.all([
