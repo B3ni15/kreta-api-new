@@ -53,7 +53,7 @@ RUN npm install -g pnpm
 COPY package.json ./
 RUN pnpm install
 
-RUN pnpm exec playwright install --with-deps chromium
+RUN npx playwright install
 
 COPY . .
 
